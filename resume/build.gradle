@@ -1,0 +1,21 @@
+apply plugin: 'com.android.feature'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+android {
+    buildToolsVersion rootProject.buildTools
+    compileSdkVersion rootProject.compileSdk
+    defaultConfig {
+        minSdkVersion rootProject.minSdk
+        targetSdkVersion rootProject.targetSdk
+    }
+    buildTypes {
+        release {
+        }
+        debug {
+        }
+    }
+}
+
+dependencies {
+    implementation project(":base")
+}

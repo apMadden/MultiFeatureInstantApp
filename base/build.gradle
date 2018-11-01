@@ -1,0 +1,49 @@
+apply plugin: 'com.android.feature'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+
+android {
+    buildToolsVersion rootProject.buildTools
+    compileSdkVersion rootProject.compileSdk
+
+    baseFeature true
+
+    defaultConfig {
+        minSdkVersion rootProject.minSdk
+        targetSdkVersion rootProject.targetSdk
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+        }
+        debug {
+        }
+    }
+}
+
+dependencies {
+    application project(':installed')
+    feature project(":map")
+    feature project(':resume')
+    api "com.android.support:appcompat-v7:$supportLibVersion"
+    api "com.android.support:design:$supportLibVersion"
+    api "com.android.support.constraint:constraint-layout:$constraintLayoutVersion"
+    api 'com.google.android.gms:play-services-maps:16.0.0'
+
+    testImplementation "junit:junit:$junitVersion"
+    androidTestImplementation("com.android.support.test.espresso:espresso-core:$espressoVersion") {
+        exclude module: "espresso-idling-resource"
+    }
+    androidTestImplementation("com.android.support.test.espresso:espresso-contrib:$espressoVersion") {
+        exclude module: "espresso-core"
+    }
+    androidTestImplementation "com.android.support.test:rules:$androidTestVersion"
+    androidTestImplementation "com.android.support.test:runner:$androidTestVersion"
+    androidTestImplementation "org.hamcrest:hamcrest-core:$hamcrestVersion"
+    api "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+}

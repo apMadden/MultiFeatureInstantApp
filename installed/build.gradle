@@ -1,0 +1,15 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion rootProject.compileSdk
+        defaultConfig {
+        minSdkVersion rootProject.minSdk
+        targetSdkVersion rootProject.targetSdk
+    }
+}
+
+dependencies {
+    implementation project(':base')
+    implementation project(':resume')
+    implementation project(':map')
+}

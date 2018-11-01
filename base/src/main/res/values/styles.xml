@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Exists for inheritance purposes -->
+    <style name="ResumeApp" parent="ResumeApp.Base" />
+
+    <style name="ResumeApp.Base" parent="Theme.AppCompat.Light.NoActionBar">
+        <!--<item name="colorPrimary">@color/resume_primary</item> -->
+        <!--<item name="colorPrimaryDark">@color/resume_primary_dark</item> -->
+        <!--<item name="colorAccent">@color/resume_accent</item> -->
+        <item name="android:textColorPrimary">@android:color/black</item>
+    </style>
+</resources>
